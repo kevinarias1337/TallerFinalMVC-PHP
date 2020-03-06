@@ -1,0 +1,87 @@
+Menú principal:
+Pacientes.
+Historial médico.
+Doctores.
+
+1.1->Pacientes:
+Nombre
+Apellido
+Tipo documento <select>
+Número documento
+Género <select>
+Edad
+GUARDAR.
+
+1.2->Consultar pacientes:
+CONSULTA PACIENTES:
+Tipo documento - Número documento - Nombre completo - Género - Edad
+                                                                    Modificar.
+VOLVER.
+
+Registrar paciente (1.1).
+Menu principal.
+
+
+
+2.2->Doctores:
+Opción médico <h1>
+Tipo documento <select>
+Número documento.
+Nombre.
+GUARDAR.
+Médicos registrados<h2>
+Tipo documento - Numero documento - Nombre
+					   Modificar.
+VOLVER.
+
+
+
+3.1->Historial médico:
+Opción historial médico <h1>
+Paciente <select>
+Médico <select>
+Observación
+GUARDAR
+Historial <h2>
+Tipo documento - Nombre paciente   
+				 Ver - Eliminar
+
+3.2->Ver:
+Historial médico de 'nombrepaciente' por el médico 'nombremedico'
+Observacion - Fecha
+
+
+
+Módelo base de datos:
+TBLGENERO
+idgenero pk int not null auto_increment (fk2)
+nombre varchar(30)
+
+TBLTIPODOCUMENTO
+idtipodoc pk int not null auto_increment (fk1)
+nombre
+
+TBLMEDICOS
+numerodocumento pk int not null (fk4)
+tipodoc fk1 int not null
+nombre varchar(100) not null
+
+TBLPACIENTES
+numerodocumento pk int not null (fk3)
+tipodoc fk1 int not null
+nombre varchar(50) not null
+apellido varchar(50) not null
+genero fk2 int not null
+edad int null
+
+TBLHISTORIAL
+idhistoria pk int not null auto_increment
+paciente fk3 int not null
+medico fk4 int not null
+observacion text not null
+fecha date
+
+
+
+CREAR PMV CON MVC, SUBIR A GIT, 000WEBHOST.
+ 
